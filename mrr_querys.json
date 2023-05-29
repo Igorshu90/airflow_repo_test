@@ -1,0 +1,21 @@
+[
+  {
+    "query": "SELECT CustomerID,PersonID,StoreID,TerritoryID,AccountNumber,cast(rowguid as varchar(200)) rowguid,ModifiedDate FROM AdventureWorks2017.Sales.Customer where ModifiedDate >= dateadd({interval},{offset},CURRENT_TIMESTAMP)",
+    "table": "MRR_Customers",
+    "destination": "MRR_Customers"
+  },
+  {
+    "query": "SELECT [ProductID],[Name],[ProductNumber],[MakeFlag],[FinishedGoodsFlag],[Color],[SafetyStockLevel],[ReorderPoint],[StandardCost],[ListPrice],[Size],[SizeUnitMeasureCode],[WeightUnitMeasureCode],[Weight],[DaysToManufacture],[ProductLine],[Class],[Style],[ProductSubcategoryID],[ProductModelID],[SellStartDate],[SellEndDate],[DiscontinuedDate],cast([rowguid] as varchar(200)) [rowguid],[ModifiedDate] FROM [AdventureWorks2017].[Production].[Product] where ModifiedDate >= dateadd({interval},{offset},CURRENT_TIMESTAMP)",
+    "table": "MRR_Product",
+    "destination": "MRR_Product"
+  }
+,
+
+  {
+    "query": "SELECT [BusinessEntityID],[TerritoryID],[SalesQuota],[Bonus],[CommissionPct],[SalesYTD],[SalesLastYear],cast([rowguid] as varchar(200)) [rowguid],CAST([ModifiedDate] AS VARCHAR(200)) [ModifiedDate] FROM [AdventureWorks2017].[Sales].[SalesPerson] where ModifiedDate >= dateadd({interval},{offset},CURRENT_TIMESTAMP)" ,
+    "table": "MRR_SalesPerson",
+    "destination": "MRR_SalesPerson"
+  }
+
+
+  ]

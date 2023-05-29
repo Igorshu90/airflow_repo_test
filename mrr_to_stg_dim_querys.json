@@ -1,0 +1,8 @@
+[
+{
+  "query": "select * from `igordwh.MRR.MRR_Product`",
+  "source_table": "MRR_DIM_PRODUCT",
+  "distension_table": "STG_DIM_PRODUCT"
+}
+
+]
